@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/react-kanvan/static/js/main.4eab137c.js",
+    "main.js": "/react-kanvan/static/js/main.e98e7e84.js",
     "index.html": "/react-kanvan/index.html",
-    "main.4eab137c.js.map": "/react-kanvan/static/js/main.4eab137c.js.map"
+    "main.e98e7e84.js.map": "/react-kanvan/static/js/main.e98e7e84.js.map"
   },
   "entrypoints": [
-    "static/js/main.4eab137c.js"
+    "static/js/main.e98e7e84.js"
   ]
 }
