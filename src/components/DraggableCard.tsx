@@ -141,7 +141,7 @@ interface IDraggableCardProps {
     boardId: string;
 }
 interface IEditTodo {
-    editTodo: string;
+    editTask: string;
 }
 
 const cardVariants = {
@@ -184,11 +184,11 @@ function DraggableCard({toDoId, toDoText, index, boardId}: IDraggableCardProps) 
         setIsEditOpen(false);
         setValue("editTask", toDoText);
     };
-    const handleEdit = ({ editTodo } : IEditTodo) => {
+    const onValid = ({ editTask } : IEditTodo) => {
         setToDos((allBoards) => {
             const newTodo = {
                 id: toDoId,
-                text: editTodo,
+                text: editTask,
             };
             const newBoard = [...allBoards[boardId].slice(0, index), newTodo, ...allBoards[boardId].slice(index + 1)];
             return {
@@ -196,18 +196,18 @@ function DraggableCard({toDoId, toDoText, index, boardId}: IDraggableCardProps) 
               [boardId]: newBoard,
             };
         });
-        setValue("editTask", editTodo);
+        setValue("editTask", editTask);
         setIsEditOpen(false);
     };
 
     return (<>
         {isEditOpen? (
-            <Form onSubmit={handleSubmit(handleEdit as any)}>
+            <Form onSubmit={handleSubmit(onValid as any)}>
                 <BoardInput 
                     {...register("editTask", {
                         required: true,
                         value: toDoText,
-                    })}
+                    })} 
                     type="text" 
                     placeholder={`Add task on ${boardId}`} 
                 />
